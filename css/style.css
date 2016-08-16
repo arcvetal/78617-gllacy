@@ -622,6 +622,7 @@
 .breadcrumbs__item::after {
   content: "»";
   position: absolute;
+  top: 1px;
   right: -10px;
 }
 
