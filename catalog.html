@@ -3,8 +3,8 @@
 <head>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/fonts.css">
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>HTML Academy: Каталог</title>
 </head>
 <body>
@@ -16,55 +16,85 @@
 						<img src="img/Logo-gllacy.svg" alt="Логотип Глейси" width="154" height="64"></div>
 					<ul class="main-nav__list">
 						<li class="main-nav__item  main-nav__item--active">
-							Каталог
+              <a class="main-nav__item-link  main-nav__item-link--active" href="#">Каталог</a>
 							<ul class="main-nav__group-list">
-								<li class="main-nav__group">
-									<a href="#">Новинки</a>
+								<li class="main-nav__group  main-nav__group--new">
+									<a class="main-nav__group-link  main-nav__group-link--new" href="#">Новинки</a>
 								</li>
 								<li class="main-nav__group">
-									<a href="#">Сливочное</a>
+									<a class="main-nav__group-link" href="#">Сливочное</a>
 								</li>
 								<li class="main-nav__group">
-									<a href="#">Щербеты</a>
+									<a class="main-nav__group-link" href="#">Щербеты</a>
 								</li>
 								<li class="main-nav__group">
-									<a href="#">Фруктовый лед</a>
+									<a class="main-nav__group-link" href="#">Фруктовый лед</a>
 								</li>
 								<li class="main-nav__group">
-									<a href="#">Мелорин</a>
+									<a class="main-nav__group-link" href="#">Мелорин</a>
 								</li>
 							</ul>
 						</li>
 						<li class="main-nav__item">
-							<a href="#">Доставка и оплата</a>
+							<a class="main-nav__item-link" href="#">Доставка и оплата</a>
 						</li>
 						<li class="main-nav__item">
-							<a href="#">О Компании</a>
+							<a class="main-nav__item-link" href="#">О Компании</a>
 						</li>
 					</ul>
 				</nav>
+
 				<div class="user-block">
 					<div class="user-block__item  user-block__item--search">
-						<div class="user-block__search-fieldset">
-							<input class="user-block__search-field" type="search" placeholder="Что ищем?"></div>
+						<div class="user-block__fieldset  user-block__fieldset--search">
+							<input class="user-block__field  user-block__field--search" type="search" placeholder="Что ищем?"></div>
 					</div>
 					<div class="user-block__item  user-block__item--login">
 						Вход
-						<div class="user-block__entry">
-							<input class="user-block__entry-email" type="email">
-							<input class="user-block__entry-password" type="password">
-							<button class="btn  btn--entry" type="submit"></button>
-							<a class="user-block__entry-forget" href="#">Забыли пароль?</a>
-							<a class="user-block__entry-new" href="#">Новая регистрация</a>
+						<div class="user-block__fieldset  user-block__fieldset--entry">
+							<input class="user-block__field  user-block__field--email" type="email" placeholder="Электронная почта">
+							<input class="user-block__field  user-block__field--password" type="password" placeholder="Пароль">
+							<button class="btn  btn--entry" type="submit">Войти</button>
+							<div class="user-block__links">
+							  <a class="user-block__link" href="#">Забыли пароль?</a>
+							  <a class="user-block__link" href="#">Новая регистрация</a>
+							</div>
 						</div>
 					</div>
-					<div class="user-block__item  user-block__item--cart-full">2 товара</div>
+					<div class="user-block__item  user-block__item--cart">2 товара</div>
+					<div class="cart">
+					    <table class="cart__table">
+					      <tr>
+					        <td class="cart__item-delete"><button class="cart__btn-close" type="button">Закрыть</button></td>
+					        <td><img class="cart__image" src="img/11.png" alt="" width="33" height="33"></td>
+					        <td class="cart__descr">Пломбир с апельсиновым джемом</td>
+					        <td class="cart__item-price">1,5 кг х <span class="cart__rubles">200руб.</span></td>
+					        <td class="cart__item-total">300руб.</td>
+					      </tr>
+					      <tr>
+					        <td class="cart__item-delete"><button class="cart__btn-close" type="button">Закрыть</button></td>
+					        <td><img class="cart__image" src="img/13.png" alt="" width="33" height="33"></td>
+					        <td class="cart__descr">Клубничный пломбир с присыпкой из белого шоколада</td>
+					        <td class="cart__item-price">1,5 кг х <span class="cart__rubles">300руб.</span></td>
+					        <td class="cart__item-total">450руб.</td>
+					      </tr>
+					      <tr>
+					        <td class="cart__total-cost" colspan="5">Итого: 750руб.</td>
+					        <td></td>
+					        <td></td>
+					        <td></td>
+					        <td></td>
+					      </tr>
+					    </table>
+				      <a class="btn btn--cart-buy" href="#">Оформить заказ</a>
+					  </div>
 				</div>
 				<div class="contacts  contacts--short">
 					c 10 до 20, ежедневно
 					<br>
 					<span class="contacts__phone">8 812 450-25-25</span>
 				</div>
+
 			</div>
 		</header>
 
@@ -91,39 +121,44 @@
 					<div class="fieldset__item-wrapper">
 						<h3 class="fieldset__title">Сортировка:</h3>
 						<div class="fieldset__field">
-							<select name="sort">
-								<option value="popular">по популярности</option>
-								<option value="price-up">сначала недорогие</option>
-								<option value="price-down">сначала дорогие</option>
-								<option value="fat">по жирности</option>
+							<select class="fieldset__select" name="sort">
+								<option class="fieldset__select-item" value="popular">по популярности</option>
+								<option class="fieldset__select-item" value="price-up">сначала недорогие</option>
+								<option class="fieldset__select-item" value="price-down">сначала дорогие</option>
+								<option class="fieldset__select-item" value="fat">по жирности</option>
 							</select>
 						</div>
 					</div>
 
 					<div class="fieldset__item-wrapper">
 						<h3 class="fieldset__title">Цена: 100 руб. - 500 руб.</h3>
-						<div class="fieldset__field">
-							<input class="fieldset__item" type="range"></div>
+						<div class="fieldset__field  fieldset__field--range">
+							<div class="fieldset__scale">
+							  <div class="fieldset__slider"></div>
+							  <div class="fieldset__scale  fieldset__scale--active"></div>
+							  <div class="fieldset__slider  fieldset__slider--right"></div>
+							</div>
+						</div>
 					</div>
 
 					<div class="fieldset__item-wrapper">
 						<h3 class="fieldset__title">Жирность:</h3>
 						<div class="fieldset__field">
 							<div class="fieldset__item-block">
-								<input class="fieldset__item" type="radio" name="fat" id="fat-0" value="0">
-								<label class="fieldset__label" for="0-perc">0%</label>
+								<input class="fieldset__item" type="radio" name="fat" id="0-perc" value="0">
+								<label class="fieldset__label  fieldset__label--radio" for="0-perc">0%</label>
 							</div>
 							<div class="fieldset__item-block">
-								<input class="fieldset__item" type="radio" name="fat" id="fat-10" value="10" checked>
-								<label class="fieldset__label" for="10-perc">до 10%</label>
+								<input class="fieldset__item" type="radio" name="fat" id="10-perc" value="10" checked>
+								<label class="fieldset__label  fieldset__label--radio" for="10-perc">до 10%</label>
 							</div>
 							<div class="fieldset__item-block">
-								<input class="fieldset__item" type="radio" name="fat" id="fat-30" value="30">
-								<label class="fieldset__label" for="30-perc">до 30%</label>
+								<input class="fieldset__item" type="radio" name="fat" id="30-perc" value="30">
+								<label class="fieldset__label  fieldset__label--radio" for="30-perc">до 30%</label>
 							</div>
 							<div class="fieldset__item-block">
-								<input class="fieldset__item" type="radio" name="fat" id="fat-30+" value="30+">
-								<label class="fieldset__label" for="more-perc">выше 30%</label>
+								<input class="fieldset__item" type="radio" name="fat" id="more-30-perc" value="30+">
+								<label class="fieldset__label  fieldset__label--radio" for="more-30-perc">выше 30%</label>
 							</div>
 						</div>
 					</div>
@@ -160,8 +195,8 @@
 
 				<div class="catalog">
 					<div class="catalog-item">
-						<a href="#">
-							<img src="img/11.png" alt="" class="catalog-item__image"></a>
+						<a class="catalog-item__link" href="#">
+							<img class="catalog-item__image" src="img/creamy-orange-gam.jpg" alt=""></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">310</span>
 							/кг
@@ -169,10 +204,11 @@
 						<a class="catalog-item__descr" href="#">
 							<h3 class="catalog-item__title">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
 						</a>
+						<a class="btn btn--catalog-item" href="#">Быстрый просмотр</a>
 					</div>
 					<div class="catalog-item">
-						<a href="#">
-							<img src="img/12.png" alt="" class="catalog-item__image"></a>
+						<a class="catalog-item__link" href="#">
+							<img class="catalog-item__image" src="img/creamy-coffee-chocolate.jpg" alt=""></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">380</span>
 							/кг
@@ -180,10 +216,11 @@
 						<a class="catalog-item__descr" href="#">
 							<h3 class="catalog-item__title">Сливочно-кофейное с кусочками шоколада</h3>
 						</a>
+						<a class="btn btn--catalog-item" href="#">Быстрый просмотр</a>
 					</div>
 					<div class="catalog-item">
-						<a href="#">
-							<img src="img/13.png" alt="" class="catalog-item__image"></a>
+						<a class="catalog-item__link" href="#">
+							<img class="catalog-item__image" src="img/creamy-strawberry.jpg" alt=""></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">355</span>
 							/кг
@@ -191,10 +228,11 @@
 						<a class="catalog-item__descr" href="#">
 							<h3 class="catalog-item__title">Сливочно-клубничное с присыпкой из белого шоколада</h3>
 						</a>
+						<a class="btn btn--catalog-item" href="#">Быстрый просмотр</a>
 					</div>
 					<div class="catalog-item">
-						<a href="#">
-							<img src="img/14.png" alt="" class="catalog-item__image"></a>
+						<a class="catalog-item__link" href="#">
+							<img class="catalog-item__image" src="img/creamy-creme-brulee.jpg" alt=""></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">415</span>
 							/кг
@@ -202,10 +240,14 @@
 						<a class="catalog-item__descr" href="#">
 							<h3 class="catalog-item__title">Сливочное крем-брюле с карамельной подливкой</h3>
 						</a>
+						<a class="btn btn--catalog-item" href="#">Быстрый просмотр</a>
 					</div>
+
+
+
 					<div class="catalog-item">
 						<a href="#">
-							<img src="img/21.png" alt="" class="catalog-item__image"></a>
+							<img class="catalog-item__image" src="img/creamy-cowberry-jam.jpg" alt=""></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">325</span>
 							/кг
@@ -213,10 +255,11 @@
 						<a class="catalog-item__descr" href="#">
 							<h3 class="catalog-item__title">Сливочное с брусничным джемом</h3>
 						</a>
+						<a class="btn btn--catalog-item" href="#">Быстрый просмотр</a>
 					</div>
 					<div class="catalog-item">
 						<a href="#">
-							<img src="img/22.png" alt="" class="catalog-item__image"></a>
+							<img class="catalog-item__image" src="img/creamy-bilberry.jpg" alt=""></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">410</span>
 							/кг
@@ -224,10 +267,11 @@
 						<a class="catalog-item__descr" href="#">
 							<h3 class="catalog-item__title">Сливочно-черничное с цельными ягодами черники</h3>
 						</a>
+						<a class="btn btn--catalog-item" href="#">Быстрый просмотр</a>
 					</div>
 					<div class="catalog-item">
 						<a href="#">
-							<img src="img/23.png" alt="" class="catalog-item__image"></a>
+							<img class="catalog-item__image" src="img/creamy-lemon.jpg" alt=""></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">375</span>
 							/кг
@@ -235,10 +279,11 @@
 						<a class="catalog-item__descr" href="#">
 							<h3 class="catalog-item__title">Сливочно-лимонное с карамельной присыпкой</h3>
 						</a>
+						<a class="btn btn--catalog-item" href="#">Быстрый просмотр</a>
 					</div>
 					<div class="catalog-item">
 						<a href="#">
-							<img src="img/24.png" alt="" class="catalog-item__image"></a>
+							<img class="catalog-item__image" src="img/creamy-chocolate-shavings.jpg" alt=""></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">320</span>
 							/кг
@@ -246,10 +291,13 @@
 						<a class="catalog-item__descr" href="#">
 							<h3 class="catalog-item__title">Сливочное с шоколадной стружкой</h3>
 						</a>
+						<a class="btn btn--catalog-item" href="#">Быстрый просмотр</a>
 					</div>
+
+
 					<div class="catalog-item">
 						<a href="#">
-							<img src="img/31.png" alt="" class="catalog-item__image"></a>
+							<img class="catalog-item__image" src="img/creamy-vanilla-chocolate-pieces.jpg" alt=""></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">440</span>
 							/кг
@@ -257,10 +305,11 @@
 						<a class="catalog-item__descr" href="#">
 							<h3 class="catalog-item__title">Сливочно-ванильное с кусочками шоколада</h3>
 						</a>
+						<a class="btn btn--catalog-item" href="#">Быстрый просмотр</a>
 					</div>
 					<div class="catalog-item">
 						<a href="#">
-							<img src="img/32.png" alt="" class="catalog-item__image"></a>
+							<img class="catalog-item__image" src="img/creamy-menthol-syrop.jpg" alt=""></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">435</span>
 							/кг
@@ -268,10 +317,11 @@
 						<a class="catalog-item__descr" href="#">
 							<h3 class="catalog-item__title">Сливочное с ментоловым сиропом</h3>
 						</a>
+						<a class="btn btn--catalog-item" href="#">Быстрый просмотр</a>
 					</div>
 					<div class="catalog-item">
 						<a href="#">
-							<img src="img/33.png" alt="" class="catalog-item__image"></a>
+							<img class="catalog-item__image" src="img/creamy-chocolate-pieces.jpg" alt=""></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">355</span>
 							/кг
@@ -279,10 +329,11 @@
 						<a class="catalog-item__descr" href="#">
 							<h3 class="catalog-item__title">Сливочное с кусочками черного шоколада</h3>
 						</a>
+						<a class="btn btn--catalog-item" href="#">Быстрый просмотр</a>
 					</div>
 					<div class="catalog-item">
 						<a href="#">
-							<img src="img/34.png" alt="" class="catalog-item__image"></a>
+							<img class="catalog-item__image" src="img/creamy-mint-syrop.jpg" alt=""></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">420</span>
 							/кг
@@ -290,7 +341,10 @@
 						<a class="catalog-item__descr" href="#">
 							<h3 class="catalog-item__title">Сливочное с мятным сиропом</h3>
 						</a>
+						<a class="btn btn--catalog-item" href="#">Быстрый просмотр</a>
 					</div>
+
+
 
 					<div class="paginator">
 						<ul class="paginator__list">
@@ -327,16 +381,16 @@
 				<div class="social-block">
 					<ul class="social-block__list">
 						<li class="social-block__item  social-block__item--tw">
-							<a href="#">Twitter</a>
+							<a class="social-block__link  social-block__link--tw" href="#">Twitter</a>
 						</li>
 						<li class="social-block__item  social-block__item--insta">
-							<a href="#">Instagram</a>
+							<a class="social-block__link  social-block__link--insta" href="#">Instagram</a>
 						</li>
 						<li class="social-block__item  social-block__item--fb">
-							<a href="#">Facebook</a>
+							<a class="social-block__link  social-block__link--fb" href="#">Facebook</a>
 						</li>
 						<li class="social-block__item  social-block__item--vk">
-							<a href="#">Vk</a>
+							<a class="social-block__link  social-block__link--vk" href="#">Vk</a>
 						</li>
 					</ul>
 				</div>
