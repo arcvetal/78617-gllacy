@@ -33,6 +33,7 @@ button:active {
   line-height: 16px;
   background-repeat: no-repeat;
   background-position: center 83px, center top;
+  -webkit-transition: background-image 0.5s ease, background-color 0.5s ease;
   transition: background-image 0.5s ease, background-color 0.5s ease;
 }
 
@@ -60,9 +61,13 @@ button:active {
 }
 
 .wrapper--footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding-top: 10px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .wrapper::after {
@@ -98,16 +103,19 @@ button:active {
   border: none;
   border-radius: 23px;
   box-shadow: 0px 2px 2px rgba(160, 32, 11, 0.64);
+  background: -webkit-linear-gradient(top, #f26843, #e74b36);
   background: linear-gradient(to bottom, #f26843, #e74b36);
 }
 
 .btn:hover {
   box-shadow: 0px 1px 2px rgba(172, 16, 0, 1);
+  background: -webkit-linear-gradient(top, #f58669, #ec6f5e);
   background: linear-gradient(to bottom, #f58669, #ec6f5e);
 }
 
 .btn:active {
   box-shadow: 0px 2px 2px rgba(148, 39, 24, 1) inset;
+  background: -webkit-linear-gradient(top, #d74632, #e1613e);
   background: linear-gradient(to bottom, #d74632, #e1613e);
 }
 
@@ -140,11 +148,13 @@ button:active {
 
 .btn--slider:hover {
   box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
+  background: -webkit-linear-gradient(top, #f58669, #ec6f5e);
   background: linear-gradient(to bottom, #f58669, #ec6f5e);
 }
 
 .btn--slider:active {
   box-shadow: 0px 2px 2px rgba(172, 16, 0, 1) inset;
+  background: -webkit-linear-gradient(top, #d84732, #e1613e);
   background: linear-gradient(to bottom, #d84732, #e1613e);
 }
 
@@ -609,11 +619,13 @@ button:active {
 }
 
 .cart__btn-close:before {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .cart__btn-close:after {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 
@@ -1265,26 +1277,41 @@ button:active {
   background-color: #f8f7f4;
 }
 
+@-webkit-keyframes jump {
+  0%   { -webkit-transform: translateY(-9999px); transform: translateY(-9999px); }
+  70%  { -webkit-transform: translateY(40px); transform: translateY(40px);    }
+  90%  { -webkit-transform: translateY(-20px); transform: translateY(-20px);   }
+  100% { -webkit-transform: translateY(0); transform: translateY(0);       }
+}
+
 @keyframes jump {
-  0%   { transform: translateY(-9999px); }
-  70%  { transform: translateY(40px);    }
-  90%  { transform: translateY(-20px);   }
-  100% { transform: translateY(0);       }
+  0%   { -webkit-transform: translateY(-9999px); transform: translateY(-9999px); }
+  70%  { -webkit-transform: translateY(40px); transform: translateY(40px);    }
+  90%  { -webkit-transform: translateY(-20px); transform: translateY(-20px);   }
+  100% { -webkit-transform: translateY(0); transform: translateY(0);       }
+}
+
+@-webkit-keyframes shake {
+  0%, 100%                { -webkit-transform: translateX(0); transform: translateX(0);     }
+  10%, 30%, 50%, 70%, 90% { -webkit-transform: translateX(-10px); transform: translateX(-10px); }
+  20%, 40%, 60%, 80%      { -webkit-transform: translateX(10px); transform: translateX(10px);  }
 }
 
 @keyframes shake {
-  0%, 100%                { transform: translateX(0);     }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
-  20%, 40%, 60%, 80%      { transform: translateX(10px);  }
+  0%, 100%                { -webkit-transform: translateX(0); transform: translateX(0);     }
+  10%, 30%, 50%, 70%, 90% { -webkit-transform: translateX(-10px); transform: translateX(-10px); }
+  20%, 40%, 60%, 80%      { -webkit-transform: translateX(10px); transform: translateX(10px);  }
 }
 
 .modal--show {
   display: block;
-  animation: jump 0.7s;
+  -webkit-animation: jump 0.7s;
+          animation: jump 0.7s;
 }
 
 .modal--error {
-  animation: shake 0.6s;
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
 }
 
 .modal__overlay {
@@ -1360,6 +1387,7 @@ button:active {
   font-size: 16px;
   line-height: 24px;
   color: #999999;
+  -webkit-transition: 0.15s all;
   transition: 0.15s all;
 }
 
@@ -1367,7 +1395,8 @@ button:active {
   font-size: 11px;
   line-height: 13px;
   color: #5b9ddf;
-  transform: translateY(-25px);
+  -webkit-transform: translateY(-25px);
+          transform: translateY(-25px);
 }
 
 .modal__btn-close {
@@ -1395,11 +1424,13 @@ button:active {
 }
 
 .modal__btn-close:before {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .modal__btn-close:after {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 
