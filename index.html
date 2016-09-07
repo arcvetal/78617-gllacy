@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
 	<title>HTML Academy: Главная</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
 			<div class="wrapper">
 				<nav class="main-nav">
 					<div class="logo">
-						<img src="img/Logo-gllacy.svg" alt="Логотип Глейси" width="154" height="64"></div>
+						<img src="img/logo-gllacy.svg" alt="Логотип Глейси" width="154" height="64"></div>
 					<ul class="main-nav__list">
 						<li class="main-nav__item  main-nav__item--active">
 							<a class="main-nav__item-link  main-nav__item-link--active" href="#">Каталог</a>
@@ -49,27 +49,37 @@
 
 				<div class="user-block">
 					<div class="user-block__item  user-block__item--search">
-						<div class="user-block__fieldset  user-block__fieldset--search">
-							<input class="user-block__field  user-block__field--search" name="search" type="search" placeholder="Что ищем?"></div>
+						<form class="user-block__fieldset  user-block__fieldset--search" action="#">
+						  <div class="user-block__field-wrapper">
+							  <input class="user-block__field  user-block__field--search" id="field-search" name="search" type="search">
+							  <label class="user-block__label" for="field-search">Что ищем?</label>
+							</div>
+						</form>
 					</div>
 					<div class="user-block__item  user-block__item--login">
 						Вход
-						<div class="user-block__fieldset  user-block__fieldset--entry">
-							<input class="user-block__field  user-block__field--email" name="email" type="email" placeholder="Электронная почта">
-							<input class="user-block__field  user-block__field--password" name="password" type="password" placeholder="Пароль">
+						<form class="user-block__fieldset  user-block__fieldset--entry" action="#">
+						  <div class="user-block__field-wrapper">
+							  <input class="user-block__field  user-block__field--email" id="field-email" name="email" type="email">
+							  <label class="user-block__label" for="field-email">Электронная почта</label>
+							</div>
+							<div class="user-block__field-wrapper">
+							  <input class="user-block__field  user-block__field--password" id="field-password" name="password" type="password">
+							  <label class="user-block__label" for="field-password">Пароль</label>
+							</div>
 							<button class="btn  btn--entry" type="submit">Войти</button>
 							<div class="user-block__links">
 								<a class="user-block__link" href="#">Забыли пароль?</a>
 								<a class="user-block__link" href="#">Новая регистрация</a>
 							</div>
-						</div>
+						</form>
 					</div>
 					<div class="user-block__item  user-block__item--cart">Пусто</div>
 				</div>
 				<div class="contacts">
 					c 10 до 20, ежедневно
 					<br>
-					<span class="contacts__phone">8 812 450-25-25</span>
+					<a class="contacts__phone" href="tel:">8 812 450-25-25</a>
 				</div>
 
 			</div>
@@ -115,7 +125,7 @@
 				<div class="populare-items">
 					<div class="catalog-item  catalog-item--hit">
 						<a class="catalog-item__link" href="#">
-							<img class="catalog-item__image" src="img/creamy-orange-gam.jpg" alt=""></a>
+							<img class="catalog-item__image" src="img/creamy-orange-gam.jpg" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой" width="267" height="267"></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">310</span>
 							/кг
@@ -127,7 +137,7 @@
 					</div>
 					<div class="catalog-item  catalog-item--hit">
 						<a class="catalog-item__link" href="#">
-							<img class="catalog-item__image" src="img/creamy-coffee-chocolate.jpg" alt=""></a>
+							<img class="catalog-item__image" src="img/creamy-coffee-chocolate.jpg" alt="Сливочно-кофейное с кусочками шоколада" width="267" height="267"></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">380</span>
 							/кг
@@ -139,7 +149,7 @@
 					</div>
 					<div class="catalog-item  catalog-item--hit">
 						<a class="catalog-item__link" href="#">
-							<img class="catalog-item__image" src="img/creamy-strawberry.jpg" alt=""></a>
+							<img class="catalog-item__image" src="img/creamy-strawberry.jpg" alt="Сливочно-клубничное с присыпкой из белого шоколада" width="267" height="267"></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">355</span>
 							/кг
@@ -151,7 +161,7 @@
 					</div>
 					<div class="catalog-item  catalog-item--hit">
 						<a class="catalog-item__link" href="#">
-							<img class="catalog-item__image" src="img/creamy-creme-brulee.jpg" alt=""></a>
+							<img class="catalog-item__image" src="img/creamy-creme-brulee.jpg" alt="Сливочное крем-брюле с карамельной подливкой" width="267" height="267"></a>
 						<div class="catalog-item__price">
 							<span class="catalog-item__rubles">415</span>
 							/кг
@@ -182,21 +192,23 @@
 				</div>
 				<div class="aside">
 					<div class="aside__item  aside-item--news">
-						<h4 class="aside__news-title">Новое в нашем блоге</h4> <b class="aside__news-theme"><a class="aside__news-link" href="#">
-								10 способов сервировки
-								<br>
-								фруктовых щербетов
-								<br>к столу</a></b>
+						<h4 class="aside__news-title">Новое в нашем блоге</h4> <p class="aside__news-theme"><a class="aside__news-link" href="#">
+								10 способов сервировки<br>
+								фруктовых щербетов<br>
+								к столу</a></p>
 					</div>
 					<div class="aside__item  aside-item--subscribe">
-						<div class="aside__item__wrapper">
+						<div class="aside__item-wrapper">
 							<p class="aside__subscribe-text">
 								Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)
 							</p>
-							<div class="aside__fieldset">
-								<input class="aside__subscribe-email" name="email" type="email" placeholder="Электронная почта">
+							<form class="aside__fieldset" action="#">
+							  <div class="aside__field-wrapper">
+								  <input class="aside__subscribe-email" id="aside-email" name="email" type="email">
+								  <label class="aside__label" for="aside-email">Электронная почта</label>
+								</div>
 								<button class="btn  btn--aside-subscr" type="submit">Отправить</button>
-							</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -214,16 +226,14 @@
 							<br>
 							19/8, Санкт-Петербург
 							<br></span>
-					</p>
-					<p class="contacts__text">
+							<br>
 						Для заказов по телефону:
 						<br>
-						<span class="contacts__text--bold">
-							8 812 450-25-25
-							<br></span>
+						<a class="contacts__phone  contacts__phone--dark" href="tel:">8 812 450-25-25</a>
+							<br>
 						(с 10 до 20 ежедневно)
 					</p>
-					<a href="#" class="btn  btn--location">Форма обратной связи</a>
+					<a href="form.html" class="btn  btn--location">Форма обратной связи</a>
 				</div>
 			</div>
 		</main>
@@ -247,28 +257,27 @@
 					</ul>
 				</div>
 				<div class="page-footer__nav">
-					<div class="page-footer__nav-list">
-						<div class="page-footer__nav-wrapper">
-							<div class="page-footer__nav-item">
-								<a class="page-footer__nav-link  page-footer__nav-link--heart" href="#" >Для поставщиков</a>
-							</div>
-							<div class="page-footer__nav-item">
-								<a class="page-footer__nav-link" href="#" >О производстве</a>
-							</div>
-						</div>
-						<div class="page-footer__nav-wrapper">
-							<div class="page-footer__nav-item">
-								<a class="page-footer__nav-link" href="#" >Наши документы</a>
-							</div>
-							<div class="page-footer__nav-item">
-								<a class="page-footer__nav-link" href="#" >Экологические стандарты</a>
-							</div>
-						</div>
-					</div>
+				  <div class="page-footer__nav-wrapper">
+				  	<div class="page-footer__nav-item">
+				  		<a class="page-footer__nav-link  page-footer__nav-link--heart" href="#" >Для поставщиков</a>
+				  	</div>
+				  	<div class="page-footer__nav-item">
+				  		<a class="page-footer__nav-link" href="#" >О производстве</a>
+				  	</div>
+				  </div>
+				  <div class="page-footer__nav-wrapper">
+				  	<div class="page-footer__nav-item">
+				  		<a class="page-footer__nav-link" href="#" >Наши документы</a>
+				  	</div>
+				  	<div class="page-footer__nav-item">
+				  		<a class="page-footer__nav-link" href="#" >Экологические стандарты</a>
+				  	</div>
+				  </div>
 				</div>
 				<div class="page-footer__copyright">
-					<a href="#">
-						<img class="page-footer__copyright-logo" src="img/icon-logo-html.svg" alt="HTML Academy" width="108" height="37"></a>
+					<div class="page-footer__logo-wrapper">
+						<img class="page-footer__copyright-logo" src="img/icon-logo-html.svg" alt="HTML Academy" width="108" height="37">
+				  </div>
 					<p class="footer__copyright-text">
 						Сделано в
 						<a class="footer__copyright-link" href="https://htmlacademy.ru/">HTML Academy</a>
@@ -283,18 +292,18 @@
 				<b>Мы обязательно вам ответим!</b>
 			</div>
 			<button class="modal__btn-close" type="button">Закрыть</button>
-			<form class="modal__form" method="post">
+			<form class="modal__form" action="#">
 				<div class="modal__field">
 					<input class="modal__item" name="name" type="text" id="modal-name" onkeyup="this.setAttribute('value', this.value)">
-					<label for="modal-name" class="modal__label">Как Вас зовут?</label>
+					<label class="modal__label" for="modal-name">Как вас зовут?</label>
 				</div>
 				<div class="modal__field">
 					<input class="modal__item" name="email" type="email" id="modal-email" onkeyup="this.setAttribute('value', this.value)">
-					<label for="modal-email" class="modal__label">Ваша почта для ответа?</label>
+					<label class="modal__label" for="modal-email">Ваша почта для ответа?</label>
 				</div>
 				<div class="modal__field">
 					<textarea class="modal__item  modal__item--textarea" id="modal-text"></textarea>
-					<label for="modal-text" class="modal__label">Напишите что-нибудь...</label>
+					<label class="modal__label" for="modal-text">Напишите что-нибудь...</label>
 				</div>
 				<button class="btn  btn--modal-send" type="submit">Отправить</button>
 			</form>
